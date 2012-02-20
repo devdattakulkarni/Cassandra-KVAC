@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+    <policy>
+        <access>
+            1
+        </access>
+        <where>
+            <in>
+                <op1>
+                    1
+                </op1>
+                <op2>
+                   1
+                </op2>
+            </in>
+        </where>
+    </policy>
+	<policy>
+        <access>
+            2
+        </access>
+        <where>
+            <in>
+                <op1>
+                   1
+                </op1>
+                <op2>
+                   2
+                </op2>
+            </in>
+        </where>
+    </policy>
+</policies>

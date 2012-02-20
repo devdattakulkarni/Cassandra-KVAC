@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="M0N6AGY" name="org.apache.cassandra.db.RowIterationTest" tests="3" time="0.701" timestamp="2011-12-10T22:15:39">
+  <properties>
+    <property name="test.long.src" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/long"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="com.thoughtworks.qdox:qdox:jar" value="/Users/devdatta.kulkarni/.m2/repository/com/thoughtworks/qdox/qdox/1.10/qdox-1.10.jar"></property>
+    <property name="asm:asm:jar" value="/Users/devdatta.kulkarni/.m2/repository/asm/asm/3.0/asm-3.0.jar"></property>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"></property>
+    <property name="commons-lang:commons-lang:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar"></property>
+    <property name="env.DISPLAY" value="/tmp/launch-L9GXjh/org.x:0"></property>
+    <property name="maven-ant-tasks.initialized" value="true"></property>
+    <property name="build.src.java" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/src/java"></property>
+    <property name="cobertura.build.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/cobertura"></property>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"></property>
+    <property name="env.LOGNAME" value="devdatta.kulkarni"></property>
+    <property name="debuglevel" value="source,lines,vars"></property>
+    <property name="ant.file.maven-dependencies" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/build-dependencies.xml"></property>
+    <property name="commons-collections:commons-collections:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar"></property>
+    <property name="sun.os.patch.level" value="unknown"></property>
+    <property name="java.vendor.url" value="http://www.apple.com/"></property>
+    <property name="scm.url" value="http://svn.apache.org/viewvc/cassandra/branches/cassandra-0.8"></property>
+    <property name="env.TERM_PROGRAM_VERSION" value="273.1"></property>
+    <property name="java.version" value="1.6.0_24"></property>
+    <property name="commons-configuration:commons-configuration:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar"></property>
+    <property name="maven-ant-tasks.version" value="2.1.3"></property>
+    <property name="jikes.class.path" value=":/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/alt-rt.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/alt-string.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/charsets.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/classes.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/dt.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jconsole.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/management-agent.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/../Classes/ui.jar"></property>
+    <property name="test.data" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/data"></property>
+    <property name="org.apache.rat:apache-rat-tasks:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/rat/apache-rat-tasks/0.6/apache-rat-tasks-0.6.jar"></property>
+    <property name="eclipse.project.name" value="apache-cassandra-0.8.6-src"></property>
+    <property name="interface.thrift.gen-java" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/interface/thrift/gen-java"></property>
+    <property name="build.src.gen-java" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/src/gen-java"></property>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"></property>
+    <property name="javadoc.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/javadoc"></property>
+    <property name="ant.project.invoked-targets" value="test"></property>
+    <property name="scm.default.developerConnection" value="scm:svn:https://svn.apache.org/repos/asf/cassandra/branches/cassandra-0.8"></property>
+    <property name="com.thoughtworks.paranamer:paranamer-generator:jar" value="/Users/devdatta.kulkarni/.m2/repository/com/thoughtworks/paranamer/paranamer-generator/2.1/paranamer-generator-2.1.jar"></property>
+    <property name="test.timeout" value="60000"></property>
+    <property name="net.java.dev.jets3t:jets3t:jar" value="/Users/devdatta.kulkarni/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar"></property>
+    <property name="net.sf.jopt-simple:jopt-simple:jar" value="/Users/devdatta.kulkarni/.m2/repository/net/sf/jopt-simple/jopt-simple/3.2/jopt-simple-3.2.jar"></property>
+    <property name="cobertura.datafile" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/cobertura/cobertura.ser"></property>
+    <property name="user.name" value="devdatta.kulkarni"></property>
+    <property name="env.LANG" value="en_US.UTF-8"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="test.resources" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/resources"></property>
+    <property name="sun.jnu.encoding" value="MacRoman"></property>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"></property>
+    <property name="org.mortbay.jetty:servlet-api-2.5:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar"></property>
+    <property name="scm.default.url" value="http://svn.apache.org/viewvc/cassandra/branches/cassandra-0.8"></property>
+    <property name="env.configitemloader" value="git@repoman.rackspace.com:/configuration-item-loader.git"></property>
+    <property name="commons-net:commons-net:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar"></property>
+    <property name="ant.file.type.maven-dependencies" value="file"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="log4j:log4j:jar" value="/Users/devdatta.kulkarni/.m2/repository/log4j/log4j/1.2.9/log4j-1.2.9.jar"></property>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="maven-ant-tasks.local" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/maven/maven-ant-tasks"></property>
+    <property name="test.long.timeout" value="300000"></property>
+    <property name="path.separator" value=":"></property>
+    <property name="commons-beanutils:commons-beanutils:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar"></property>
+    <property name="env.com.apple.java.jvmTask" value="CommandLine_Manual.java"></property>
+    <property name="file.encoding" value="MacRoman"></property>
+    <property name="test.distributed.src" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/distributed"></property>
+    <property name="ant.project.default-target" value="build"></property>
+    <property name="env.HOME" value="/Users/devdatta.kulkarni"></property>
+    <property name="test.conf" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/conf"></property>
+    <property name="javadoc.jars.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/javadocs"></property>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"></property>
+    <property name="ant.file" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build.xml"></property>
+    <property name="ant.file.apache-cassandra" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build.xml"></property>
+    <property name="commons-codec:commons-codec:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar"></property>
+    <property name="build.src" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/src"></property>
+    <property name="java.io.tmpdir" value="/var/folders/ot/ot4R6R7XHJakFYRY83OzYZCFbG2/-Tmp-/"></property>
+    <property name="TODAY" value="December 10 2011"></property>
+    <property name="user.language" value="en"></property>
+    <property name="commons-logging:commons-logging:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="commons-digester:commons-digester:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar"></property>
+    <property name="env.JAVA_MAIN_CLASS_46599" value="org.apache.tools.ant.launch.Launcher"></property>
+    <property name="ant.file.type" value="file"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="version" value="0.8.6-SNAPSHOT"></property>
+    <property name="net.java.dev.jna:jna:jar" value="/Users/devdatta.kulkarni/.m2/repository/net/java/dev/jna/jna/3.2.7/jna-3.2.7.jar"></property>
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x53919D21:0:0"></property>
+    <property name="commons-httpclient:commons-httpclient:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar"></property>
+    <property name="version.properties.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes/main/org/apache/cassandra/config/"></property>
+    <property name="build.dir.lib" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib"></property>
+    <property name="ant.file.type.apache-cassandra" value="file"></property>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"></property>
+    <property name="final.name" value="apache-cassandra-0.8.6-SNAPSHOT"></property>
+    <property name="maven-repository-id" value="apache.snapshots.https"></property>
+    <property name="org.apache.rat:apache-rat:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/rat/apache-rat/0.6/apache-rat-0.6.jar"></property>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"></property>
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on February 28 2011"></property>
+    <property name="build.test.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/test"></property>
+    <property name="avro.src" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/src/avro"></property>
+    <property name="scm.connection" value="scm:svn:http://svn.apache.org/repos/asf/cassandra/branches/cassandra-0.8"></property>
+    <property name="gopherProxySet" value="false"></property>
+    <property name="interface.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/interface"></property>
+    <property name="org.apache.rat:apache-rat-core:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/rat/apache-rat-core/0.6/apache-rat-core-0.6.jar"></property>
+    <property name="build.src.resources" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/src/resources"></property>
+    <property name="os.name" value="Mac OS X"></property>
+    <property name="maven-repository-url" value="https://repository.apache.org/content/repositories/snapshots"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="mrj.build" value="10M3326"></property>
+    <property name="env.TERM" value="xterm-color"></property>
+    <property name="tomcat:jasper-compiler:jar" value="/Users/devdatta.kulkarni/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"></property>
+    <property name="legacy-sstable-root" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/data/legacy-sstables"></property>
+    <property name="mrj.version" value="1060.1.6.0_24-334"></property>
+    <property name="xmlenc:xmlenc:jar" value="/Users/devdatta.kulkarni/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar"></property>
+    <property name="maven-ant-tasks.url" value="http://repo2.maven.org/maven2/org/apache/maven/maven-ant-tasks"></property>
+    <property name="commons-beanutils:commons-beanutils-core:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar"></property>
+    <property name="scm.default.path" value="cassandra/branches/cassandra-0.8"></property>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"></property>
+    <property name="env.PATH" value="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin"></property>
+    <property name="commons-cli:commons-cli:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar"></property>
+    <property name="oro:oro:jar" value="/Users/devdatta.kulkarni/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar"></property>
+    <property name="storage-config" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/conf"></property>
+    <property name="ant.java.version" value="1.6"></property>
+    <property name="basedir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src"></property>
+    <property name="java.class.version" value="50.0"></property>
+    <property name="env.SHLVL" value="1"></property>
+    <property name="org.apache.ant:ant-launcher:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar"></property>
+    <property name="build.classes.thrift" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes/thrift"></property>
+    <property name="ant.home" value="/usr/share/ant"></property>
+    <property name="ant:ant:jar" value="/Users/devdatta.kulkarni/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar"></property>
+    <property name="cobertura.report.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/cobertura/report"></property>
+    <property name="hsqldb:hsqldb:jar" value="/Users/devdatta.kulkarni/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar"></property>
+    <property name="artifact.remoteRepository.oauth" value="http://oauth.googlecode.com/svn/code/maven"></property>
+    <property name="build.lib" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib"></property>
+    <property name="log4j.configuration" value="log4j-junit.properties"></property>
+    <property name="net.sf.kosmosfs:kfs:jar" value="/Users/devdatta.kulkarni/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar"></property>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/cobertura/cobertura.ser"></property>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"></property>
+    <property name="build.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build"></property>
+    <property name="is.source.artifact" value="true"></property>
+    <property name="build.classes" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes"></property>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler"></property>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"></property>
+    <property name="com.thoughtworks.paranamer:paranamer-ant:jar" value="/Users/devdatta.kulkarni/.m2/repository/com/thoughtworks/paranamer/paranamer-ant/2.1/paranamer-ant-2.1.jar"></property>
+    <property name="env.USER" value="devdatta.kulkarni"></property>
+    <property name="cliUpToDate" value="true"></property>
+    <property name="org.apache.hadoop:hadoop-core:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/hadoop/hadoop-core/0.20.203.0/hadoop-core-0.20.203.0.jar"></property>
+    <property name="env.TERM_PROGRAM" value="Apple_Terminal"></property>
+    <property name="YEAR" value="2011"></property>
+    <property name="env.COMMAND_MODE" value="unix2003"></property>
+    <property name="ant.project.name" value="apache-cassandra"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="avroINProtoUpToDate" value="true"></property>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"></property>
+    <property name="sun.cpu.isalist" value=""></property>
+    <property name="maven-ant-tasks.jar.exists" value="true"></property>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"></property>
+    <property name="os.version" value="10.6.7"></property>
+    <property name="cobertura.classes.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/cobertura/classes"></property>
+    <property name="user.home" value="/Users/devdatta.kulkarni"></property>
+    <property name="org.apache.ant:ant:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar"></property>
+    <property name="artifact.remoteRepository.apache" value="https://repository.apache.org/content/repositories/releases"></property>
+    <property name="java.vm.vendor" value="Apple Inc."></property>
+    <property name="test.lib" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/test/lib"></property>
+    <property name="test.unit.src" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/unit"></property>
+    <property name="cobertura.version" value="1.9.4.1"></property>
+    <property name="user.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src"></property>
+    <property name="org.mortbay.jetty:jsp-2.1:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar"></property>
+    <property name="org.eclipse.jdt:core:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar"></property>
+    <property name="env.PWD" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src"></property>
+    <property name="test.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test"></property>
+    <property name="commons-el:commons-el:jar" value="/Users/devdatta.kulkarni/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar"></property>
+    <property name="org.apache.commons:commons-math:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/apache/commons/commons-math/2.1/commons-math-2.1.jar"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="env.TMPDIR" value="/var/folders/ot/ot4R6R7XHJakFYRY83OzYZCFbG2/-Tmp-/"></property>
+    <property name="env.com.apple.java.jvmMode" value="client"></property>
+    <property name="java.vm.version" value="19.1-b02-334"></property>
+    <property name="java.class.path" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes/main:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes/thrift:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/antlr-3.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/avro-1.4.0-fixes.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/avro-1.4.0-sources-fixes.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/commons-cli-1.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/commons-codec-1.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/commons-collections-3.2.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/commons-lang-2.4.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/concurrentlinkedhashmap-lru-1.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/guava-r08.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/high-scale-lib-1.1.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/jackson-core-asl-1.4.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/jackson-mapper-asl-1.4.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/jamm-0.2.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/jline-0.9.94.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/json-simple-1.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/libthrift-0.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/log4j-1.2.16.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/servlet-api-2.5-20081211.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/slf4j-api-1.6.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/slf4j-log4j12-1.6.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/snakeyaml-1.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/ant-1.6.5.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/apache-rat-0.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/apache-rat-core-0.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/apache-rat-tasks-0.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/asm-3.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-beanutils-1.7.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-beanutils-core-1.8.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-cli-1.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-codec-1.4.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-collections-3.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-configuration-1.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-digester-1.8.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-el-1.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-httpclient-3.0.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-lang-2.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-logging-1.1.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-math-2.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/commons-net-1.4.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/core-3.1.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/hadoop-core-0.20.203.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/hsqldb-1.8.0.10.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jasper-compiler-5.5.12.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jasper-runtime-5.5.12.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jets3t-0.7.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jetty-6.1.26.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jetty-util-6.1.26.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jna-3.2.7.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jopt-simple-3.2.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jsp-2.1-6.1.14.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/jsp-api-2.1-6.1.14.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/junit-4.6.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/kfs-0.3.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/oro-2.0.8.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/paranamer-ant-2.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/paranamer-generator-2.1.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/qdox-1.10.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/servlet-api-2.5-20081211.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/servlet-api-2.5-6.1.14.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/jars/xmlenc-0.52.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/ant-1.6.5-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/apache-rat-core-0.6-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/apache-rat-tasks-0.6-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-beanutils-1.7.0-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-cli-1.2-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-codec-1.4-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-collections-3.2-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-configuration-1.6-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-digester-1.8-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-el-1.0-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-httpclient-3.0.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-lang-2.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-logging-1.1.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-math-2.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/commons-net-1.4.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jets3t-0.7.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jetty-6.1.26-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jetty-util-6.1.26-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jna-3.2.7-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jopt-simple-3.2-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jsp-2.1-6.1.14-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/jsp-api-2.1-6.1.14-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/junit-4.6-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/oro-2.0.8-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/paranamer-ant-2.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/paranamer-generator-2.1-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/qdox-1.10-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/servlet-api-2.5-20081211-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/lib/sources/servlet-api-2.5-6.1.14-sources.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/test/classes:/Users/devdatta.kulkarni/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/Users/devdatta.kulkarni/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/Users/devdatta.kulkarni/.m2/repository/asm/asm/3.0/asm-3.0.jar:/Users/devdatta.kulkarni/.m2/repository/asm/asm-tree/3.0/asm-tree-3.0.jar:/Users/devdatta.kulkarni/.m2/repository/log4j/log4j/1.2.9/log4j-1.2.9.jar:/Users/devdatta.kulkarni/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/devdatta.kulkarni/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/conf:/usr/share/java/ant-1.8.2/lib/ant-launcher.jar:/usr/share/ant/lib/ant.jar:/usr/share/ant/lib/ant-junit.jar:/usr/share/ant/lib/ant-junit4.jar:/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/lib/jamm-0.2.2.jar"></property>
+    <property name="DSTAMP" value="20111210"></property>
+    <property name="ant.library.dir" value="/usr/share/ant/lib"></property>
+    <property name="os.arch" value="x86_64"></property>
+    <property name="env.Apple_PubSub_Socket_Render" value="/tmp/launch-usDvXH/Render"></property>
+    <property name="test.name" value="*Test"></property>
+    <property name="interface.thrift.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/interface/thrift"></property>
+    <property name="dist.dir" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/dist"></property>
+    <property name="sun.java.launcher" value="SUN_STANDARD"></property>
+    <property name="corrupt-sstable-root" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/data/corrupt-sstables"></property>
+    <property name="access.properties" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/test/conf/access.properties"></property>
+    <property name="ant.core.lib" value="/usr/share/ant/lib/ant.jar"></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="TSTAMP" value="1614"></property>
+    <property name="build.classes.main" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/classes/main"></property>
+    <property name="file.separator" value="/"></property>
+    <property name="org.mortbay.jetty:jetty-util:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar"></property>
+    <property name="junit:junit:jar" value="/Users/devdatta.kulkarni/.m2/repository/junit/junit/4.6/junit-4.6.jar"></property>
+    <property name="org.mortbay.jetty:jsp-api-2.1:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar"></property>
+    <property name="java.runtime.version" value="1.6.0_24-b07-334-10M3326"></property>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"></property>
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/launch-XjydwD/Listeners"></property>
+    <property name="asm:asm-tree:jar" value="/Users/devdatta.kulkarni/.m2/repository/asm/asm-tree/3.0/asm-tree-3.0.jar"></property>
+    <property name="org.mortbay.jetty:servlet-api:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar"></property>
+    <property name="maven.version" value="3.0.3"></property>
+    <property name="cqlcurrent" value="true"></property>
+    <property name="user.country" value="US"></property>
+    <property name="env.configitemservice" value="git@repoman.rackspace.com:/configuration-item-service.git"></property>
+    <property name="env.SHELL" value="/bin/bash"></property>
+    <property name="artifact.remoteRepository.java.net2" value="http://download.java.net/maven/2"></property>
+    <property name="net.sourceforge.cobertura:cobertura:jar" value="/Users/devdatta.kulkarni/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar"></property>
+    <property name="artifact.remoteRepository.central" value="http://repo1.maven.org/maven2"></property>
+    <property name="scm.developerConnection" value="scm:svn:https://svn.apache.org/repos/asf/cassandra/branches/cassandra-0.8"></property>
+    <property name="java.vendor" value="Apple Inc."></property>
+    <property name="artifact.remoteRepository.jclouds" value="http://jclouds.googlecode.com/svn/repo"></property>
+    <property name="tomcat:jasper-runtime:jar" value="/Users/devdatta.kulkarni/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar"></property>
+    <property name="org.mortbay.jetty:jetty:jar" value="/Users/devdatta.kulkarni/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar"></property>
+    <property name="awt.nativeDoubleBuffering" value="true"></property>
+    <property name="base.version" value="0.8.6"></property>
+    <property name="scm.default.connection" value="scm:svn:http://svn.apache.org/repos/asf/cassandra/branches/cassandra-0.8"></property>
+    <property name="java.specification.version" value="1.6"></property>
+    <property name="test.classes" value="/Users/devdatta.kulkarni/Documents/Cassandra/apache-cassandra-0.8.6-src/build/test/classes"></property>
+    <property name="sun.arch.data.model" value="64"></property>
+  </properties>
+  <testcase classname="org.apache.cassandra.db.RowIterationTest" name="testRowIteration" time="0.334"></testcase>
+  <testcase classname="org.apache.cassandra.db.RowIterationTest" name="testRowIterationDeletionTime" time="0.063"></testcase>
+  <testcase classname="org.apache.cassandra.db.RowIterationTest" name="testRowIterationDeletion" time="0.035"></testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
