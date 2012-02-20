@@ -36,6 +36,7 @@ public class KVACAuthorityTest {
         Assert.assertNotNull(policyMap);
 
         Set<String> resourceSet = policyMap.keySet();
+        System.out.println("KVACAuthorityTest");
 
         int cnt = 0;
         for (String s : resourceSet) {
