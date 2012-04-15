@@ -309,6 +309,7 @@ public class CassandraServer implements Cassandra.Iface {
         }
     }
 
+    // Modified to use KVAC
     public List<ColumnOrSuperColumn> get_slice(ByteBuffer key,
         ColumnParent column_parent, SlicePredicate predicate,
         ConsistencyLevel consistency_level) throws InvalidRequestException,

@@ -1,4 +1,4 @@
-Cassandra-KVAC is implementation of Cassandra with the Key-Value Access Control (K-VAC) Model.
+Cassandra-KVAC is implementation of Cassandra with the Key-Value Access Control Model (K-VAC).
 
 Starting from the main Cassandra code base, we have added functionality
 to support fine-grained access control model (K-VAC) for Cassandra.
@@ -8,15 +8,17 @@ Moreover, K-VAC supports content-based and context-based access control.
 
 Design
 -------
-We define a new class -- KVACAuthority -- which enforces the K-VAC policies. 
-The KVACAuthority implements the IAuthority interface.
+We define a new class called KVACAuthority in the org.apache.cassandra.auth package 
+which enforces the K-VAC policies. The KVACAuthority implements the IAuthority interface.
+
 To use K-VAC for access control, change the creation of authority in the 
 DatabaseDescriptor class from SimpleAuthority to KVACAuthority.
-
+To demonstrate use of K-VAC we have modified the ``get_slice'' method and 
+the ``internal_get'' method of the CassandraServer class (in the org.apache.cassandra.thrift package)
+to demonstrate the use of K-VAC for access control within Cassandra.
 
 The K-VAC policies are specified in XML. A sample policy file (Policy.xml)
 is provided in conf directory.
-
 
 Running Cassandra with K-VAC for the example Policy:
 ------------------------------------------------------
@@ -44,5 +46,11 @@ Running Cassandra with K-VAC for the example Policy:
 7) Execute a get:
    - get Doctor[jsmith];
 
+DISCLAIMER:
+------------
+This code is currently at an experimental stage. PLEASE DO NOT use it for 
+any critical projects. If you are looking for official version of Cassandra,
+it can be found at:
 
+http://cassandra.apache.org/
 
