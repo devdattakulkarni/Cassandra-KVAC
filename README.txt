@@ -14,8 +14,7 @@ which enforces the K-VAC policies. The KVACAuthority implements the IAuthority i
 To use K-VAC for access control, change the creation of authority in the 
 DatabaseDescriptor class from SimpleAuthority to KVACAuthority.
 To demonstrate use of K-VAC we have modified the ``get_slice'' method and 
-the ``internal_get'' method of the CassandraServer class (in the org.apache.cassandra.thrift package)
-to demonstrate the use of K-VAC for access control within Cassandra.
+the ``internal_get'' method of the CassandraServer class which is present in the org.apache.cassandra.thrift package.
 
 The K-VAC policies are specified in XML. A sample policy file (Policy.xml)
 is provided in conf directory.
