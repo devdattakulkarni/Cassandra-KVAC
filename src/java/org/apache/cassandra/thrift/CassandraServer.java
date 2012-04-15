@@ -487,8 +487,9 @@ public class CassandraServer implements Cassandra.Iface {
         resourceNameValueMap.put("columnFamily", column_path.column_family);
         resourceNameValueMap.put(colName, colValue);
 
-        state().hasAccessToColumnsWithSpecificValues(key, column_path.column_family, colName,
-            Permission.READ, this);
+        // Devdatta - March 20, 2012
+        //state().hasAccessToColumnsWithSpecificValues(key, column_path.column_family, colName,
+        //    Permission.READ, this);
 
         return colOrSuperCol;
     }
