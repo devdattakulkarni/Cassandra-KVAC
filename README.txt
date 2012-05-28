@@ -1,5 +1,9 @@
 Cassandra-KVAC is implementation of Cassandra with the Key-Value Access Control Model (K-VAC).
 
+Description and details about the K-VAC model can be found in:
+
+https://github.com/devdattakulkarni/KVAC/tree/master/docs/kvac-model.pdf
+
 Starting from the main Cassandra code base, we have added functionality
 to support fine-grained access control model (K-VAC) for Cassandra.
 In K-VAC, access control policies can be specified at the level of
