@@ -23,6 +23,7 @@ public class KVACAuthority implements IAuthority {
     public final static String ACCESS_FILENAME_PROPERTY = "access.properties";
     Map<String, Node> resourcePolicyMap;
     Map<Long, Long>threadIdInvocationCount = new LinkedHashMap<Long, Long>();
+    //private Map<Node, Node> resourcePolicyMap;
 
     public EnumSet<Permission> authorize(AuthenticatedUser user,
         List<Object> resource) {

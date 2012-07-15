@@ -82,8 +82,8 @@ public class DatabaseDescriptor
     //private static IAuthenticator authenticator = new AllowAllAuthenticator();
     private static IAuthenticator authenticator = new SimpleAuthenticator();
     //private static IAuthority authority = new AllowAllAuthority();
-    //private static IAuthority authority = new KVACAuthority();
-    private static IAuthority authority = new SimpleAuthority();
+    private static IAuthority authority = new KVACAuthority();
+    //private static IAuthority authority = new SimpleAuthority();
 
     private final static String DEFAULT_CONFIGURATION = "cassandra.yaml";
 

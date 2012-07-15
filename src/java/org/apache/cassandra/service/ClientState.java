@@ -185,7 +185,7 @@ public class ClientState {
         hasAccess(user, perms, perm, resource);
     }
 
-    public void hasAccessToColumnsWithSpecificValues(ByteBuffer key,
+    public void hasAccessToColumnsWithSpecificValues_kvac(ByteBuffer key,
         String columnFamily, String column, Permission perm,
         CassandraServer server) throws InvalidRequestException {
 

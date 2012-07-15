@@ -308,9 +308,19 @@ public class CassandraServer implements Cassandra.Iface {
             return thriftifyColumns(cf.getSortedColumns(), reverseOrder);
         }
     }
+    
+    public List<ColumnOrSuperColumn> get_slice(ByteBuffer key, ColumnParent column_parent, SlicePredicate predicate, ConsistencyLevel consistency_level)
+    throws InvalidRequestException, UnavailableException, TimedOutException
+    {
+        logger.debug("get_slice");
+
+        state().hasColumnFamilyAccess(column_parent.column_family, Permission.READ);
+        return multigetSliceInternal(state().getKeyspace(), Collections.singletonList(key), column_parent, predicate, consistency_level).get(key);
+    }
+    
 
     // Modified to use KVAC
-    public List<ColumnOrSuperColumn> get_slice(ByteBuffer key,
+    public List<ColumnOrSuperColumn> get_slice_kvac(ByteBuffer key,
         ColumnParent column_parent, SlicePredicate predicate,
         ConsistencyLevel consistency_level) throws InvalidRequestException,
         UnavailableException, TimedOutException {
@@ -434,9 +444,68 @@ public class CassandraServer implements Cassandra.Iface {
 
         return getSlice(commands, consistency_level);
     }
+    
+    private ColumnOrSuperColumn internal_get_orig(ByteBuffer key, ColumnPath column_path, ConsistencyLevel consistency_level)
+    throws InvalidRequestException, NotFoundException, UnavailableException, TimedOutException
+    {
+        state().hasColumnFamilyAccess(column_path.column_family, Permission.READ);
+        String keyspace = state().getKeyspace();
+
+        CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_path.column_family);
+        ThriftValidation.validateColumnPath(metadata, column_path);
+        ThriftValidation.validateConsistencyLevel(keyspace, consistency_level);
+
+        QueryPath path = new QueryPath(column_path.column_family, column_path.column == null ? null : column_path.super_column);
+        List<ByteBuffer> nameAsList = Arrays.asList(column_path.column == null ? column_path.super_column : column_path.column);
+        ThriftValidation.validateKey(metadata, key);
+        ReadCommand command = new SliceByNamesReadCommand(keyspace, key, path, nameAsList);
+
+        Map<DecoratedKey, ColumnFamily> cfamilies = readColumnFamily(Arrays.asList(command), consistency_level);
+
+        ColumnFamily cf = cfamilies.get(StorageService.getPartitioner().decorateKey(command.key));
+
+        if (cf == null)
+            throw new NotFoundException();
+        List<ColumnOrSuperColumn> tcolumns = thriftifyColumnFamily(cf, command.queryPath.superColumnName != null, false);
+        if (tcolumns.isEmpty())
+            throw new NotFoundException();
+        assert tcolumns.size() == 1;
+        return tcolumns.get(0);
+    }
+    
+    private ColumnOrSuperColumn internal_get(ByteBuffer key, ColumnPath column_path, ConsistencyLevel consistency_level)
+    throws InvalidRequestException, NotFoundException, UnavailableException, TimedOutException
+    {
+        //state().hasColumnFamilyAccess(column_path.column_family, Permission.READ);
+        String keyspace = state().getKeyspace();
+        String column = this.getStringRepresentation(column_path.column);
+        
+        state().hasAccessToColumnsWithSpecificValues_kvac(key, column_path.column_family, column, Permission.READ, this);
+
+        CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_path.column_family);
+        ThriftValidation.validateColumnPath(metadata, column_path);
+        ThriftValidation.validateConsistencyLevel(keyspace, consistency_level);
+
+        QueryPath path = new QueryPath(column_path.column_family, column_path.column == null ? null : column_path.super_column);
+        List<ByteBuffer> nameAsList = Arrays.asList(column_path.column == null ? column_path.super_column : column_path.column);
+        ThriftValidation.validateKey(metadata, key);
+        ReadCommand command = new SliceByNamesReadCommand(keyspace, key, path, nameAsList);
+
+        Map<DecoratedKey, ColumnFamily> cfamilies = readColumnFamily(Arrays.asList(command), consistency_level);
+
+        ColumnFamily cf = cfamilies.get(StorageService.getPartitioner().decorateKey(command.key));
+
+        if (cf == null)
+            throw new NotFoundException();
+        List<ColumnOrSuperColumn> tcolumns = thriftifyColumnFamily(cf, command.queryPath.superColumnName != null, false);
+        if (tcolumns.isEmpty())
+            throw new NotFoundException();
+        assert tcolumns.size() == 1;
+        return tcolumns.get(0);
+    }    
 
     // KVAC modification - Feb 11, 2012
-    private ColumnOrSuperColumn internal_get(ByteBuffer key,
+    private ColumnOrSuperColumn internal_get_kvac_prev(ByteBuffer key,
         ColumnPath column_path, ConsistencyLevel consistency_level)
         throws InvalidRequestException, NotFoundException,
         UnavailableException, TimedOutException {
