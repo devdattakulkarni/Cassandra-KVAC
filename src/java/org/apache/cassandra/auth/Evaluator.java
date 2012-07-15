@@ -24,6 +24,8 @@ import org.w3c.dom.NodeList;
 public class Evaluator {
 
     private static Logger logger = LoggerFactory.getLogger(Evaluator.class);
+    protected static final String YYYY_MM_DD = "yyyy/MM/dd";
+    protected static final String CURRENT_TIME = "CURRENT_TIME";
 
     protected static boolean evaluate(ByteBuffer key, AuthenticatedUser user,
         Node whereNode, CassandraServer server) {
@@ -65,7 +67,7 @@ public class Evaluator {
                 DateFormat dateFormat = new SimpleDateFormat(
                     "yyyy/MM/dd HH:mm:ss");
                 Date date = new Date();
-                int i = compareDates(dateFormat.format(date), lhs);
+                int i = compareDates(dateFormat.format(date), lhsResult);
                 if (i == 1)
                     return true;
                 else
@@ -109,6 +111,9 @@ public class Evaluator {
             if (n.getNodeName().equals("equal")) {
                 result = result && evaluate_equal(key, user, n, server);
             }
+            if (n.getNodeName().equals("and")) {
+                result = result && evaluate_and(key, user, n, server);
+            }
         }
         return result;
     }
@@ -134,10 +139,17 @@ public class Evaluator {
     private static String evaluate(ByteBuffer key, AuthenticatedUser user,
         String expr, CassandraServer server) {
         String answer = null;
+        
+        if (expr.equals(CURRENT_TIME)) {
+            DateFormat dateFormat = new SimpleDateFormat(YYYY_MM_DD);
+            Date date = new Date();
+            return dateFormat.format(date);
+        }
 
         String columnFamily = parseColumnFamily(expr);
         String column = parseColumn(expr);
         ByteBuffer queryKey = parseKey(key, user, expr, server);
+        String queryKeyString = KVACUtil.getStringRepresentation(queryKey);
 
         ColumnPath accessorColPath = new ColumnPath();
         accessorColPath.setColumn_family(columnFamily);
@@ -149,14 +161,16 @@ public class Evaluator {
 
             ColumnOrSuperColumn accessorsSpecificColumn;
 
+            //System.out.println("(Evaluator - evaluate) Making a GET call for:" + queryKeyString);
             accessorsSpecificColumn = server.get(queryKey, accessorColPath,
                 consistency_level);
             String accessorColValue = KVACUtil
                 .getStringRepresentation(accessorsSpecificColumn.getColumn()
                     .bufferForValue());
 
-            logger.info(" -- KVAC --- Accessor column value:"
-                + accessorColValue);
+            //logger.info(" -- KVAC --- Accessor column value:"
+            //    + accessorColValue);
+            //System.out.println(" Column value:" + accessorColValue);
             answer = accessorColValue;
         } catch (NotFoundException e) {
             e.printStackTrace();
@@ -191,7 +205,7 @@ public class Evaluator {
         return columnFamily;
     }
 
-    protected static String parseColumn(String expression) {
+    protected static String parseColumn_prev(String expression) {
         // input = /PatientInfoSystem/Patient(key=thisKey)/name
         // output = "name"
         String column = null;
@@ -209,7 +223,37 @@ public class Evaluator {
         }
         return column;
     }
+    
+    protected static String parseColumn(String expression) {
+        // input = /PatientInfoSystem/Patient(key=thisKey)/name
+        // output = "name"
+        // input =
+        // /PatientInfoSystem/Doctor(key=/PatientInfoSystem/Patient(key=thisKey)/curr_doctor)/location
+        // output = "location"
+        // input =
+        // /SocialShare/Person(key=thisKey)/message(value=$c)
+        // output = message
 
+        String[] colNameValueArr = new String[2];
+        String column = null;
+        String value = null;
+
+        int lastSlashIndex = expression.lastIndexOf("/");
+        column = expression.substring(lastSlashIndex + 1);
+
+        int firstParenIndex = column.indexOf("(");
+        if (firstParenIndex >= 0) {
+            value = column.substring(firstParenIndex + 1, column
+                .lastIndexOf(""));
+            value = value.substring(value.indexOf("=") + 1, value.length() - 1);
+            column = column.substring(0, firstParenIndex);
+        }
+        colNameValueArr[0] = column;
+        colNameValueArr[1] = value;
+
+        return column;
+    }
+    
     protected static ByteBuffer parseKey(ByteBuffer inputKey,
         AuthenticatedUser user, String expression, CassandraServer server) {
         // 1) input = /PatientInfoSystem/Patient(key=thisKey)/name

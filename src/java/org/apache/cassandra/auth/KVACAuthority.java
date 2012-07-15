@@ -39,7 +39,7 @@ public class KVACAuthority implements IAuthority {
         List<Object> resourceList, CassandraServer server) {
         
         long threadId = Thread.currentThread().getId();
-        System.out.println("Thread ID:" + threadId);
+        //System.out.println("Thread ID:" + threadId);
         
         // We are returning back as part of an ongoing authorize invocation.
         if (threadIdInvocationCount.containsKey(threadId)) {
@@ -61,7 +61,7 @@ public class KVACAuthority implements IAuthority {
             resource += "/" + resourceList.get(i);
         }
         
-        System.out.println("Resource:" + resource);
+        //System.out.println("Resource:" + resource);
         Node whereNode = resourcePolicyMap.get(resource);
         
         boolean result = Evaluator.evaluate(key, user, whereNode, server);
