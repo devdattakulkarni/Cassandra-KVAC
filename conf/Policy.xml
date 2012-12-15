@@ -47,7 +47,7 @@
     </policy>
     <policy>
         <access>
-            /PatientInfoSystem/Patient
+            /PatientInfoSystem/Patient/patient_info
         </access>
         <where>
             <equal>

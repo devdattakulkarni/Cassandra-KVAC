@@ -478,10 +478,10 @@ public class CassandraServer implements Cassandra.Iface {
     {
         state().hasColumnFamilyAccess(column_path.column_family, Permission.READ); // 1.
         String keyspace = state().getKeyspace();
-        String column = this.getStringRepresentation(column_path.column);
-        String providedKey = this.getStringRepresentation(key);
-        
-        // For using kvac, uncomment the line below and comment the line marked 1 above.
+  
+        // For using kvac, uncomment the 3 lines below and comment the line marked 1 above.
+        //String column = this.getStringRepresentation(column_path.column);
+        //String providedKey = this.getStringRepresentation(key);
         //state().hasAccessToColumnsWithSpecificValues_kvac(key, column_path.column_family, column, Permission.READ, this);
 
         CFMetaData metadata = ThriftValidation.validateColumnFamily(keyspace, column_path.column_family);

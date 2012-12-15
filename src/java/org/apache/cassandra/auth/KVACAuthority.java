@@ -13,6 +13,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.cassandra.config.ConfigurationException;
 import org.apache.cassandra.thrift.CassandraServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -20,10 +22,13 @@ import org.xml.sax.SAXException;
 
 public class KVACAuthority implements IAuthority {
 
+    private static Logger logger = LoggerFactory.getLogger(KVACAuthority.class);
+
     public final static String ACCESS_FILENAME_PROPERTY = "access.properties";
-    Map<String, Node> resourcePolicyMap;
-    Map<Long, Long>threadIdInvocationCount = new LinkedHashMap<Long, Long>();
-    //private Map<Node, Node> resourcePolicyMap;
+    Map<String, Node> resourcePolicyMap = readPolicyFile();
+    Map<Long, Long> threadIdInvocationCount = new LinkedHashMap<Long, Long>();
+
+    // private Map<Node, Node> resourcePolicyMap;
 
     public EnumSet<Permission> authorize(AuthenticatedUser user,
         List<Object> resource) {
@@ -35,38 +40,42 @@ public class KVACAuthority implements IAuthority {
     }
 
     @Override
-    public EnumSet<Permission> authorize(ByteBuffer key, AuthenticatedUser user,
-        List<Object> resourceList, CassandraServer server) {
+    public EnumSet<Permission> authorize(ByteBuffer key,
+        AuthenticatedUser user, List<Object> resourceList,
+        CassandraServer server) {
         
+        //logger.info("Evaluating authorization decision inside KVACAuthority");
+
         long threadId = Thread.currentThread().getId();
-        //System.out.println("Thread ID:" + threadId);
-        
+        // System.out.println("Thread ID:" + threadId);
+
         // We are returning back as part of an ongoing authorize invocation.
         if (threadIdInvocationCount.containsKey(threadId)) {
             return Permission.ALL;
         } else {
             threadIdInvocationCount.put(threadId, threadId);
         }
-       
+
+        /*
         if (resourcePolicyMap == null) {
             try {
                 readPolicyFile();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        
+        } */
+
         String resource = "";
-        for (int i = 0; i<resourceList.size(); i++) {
+        for (int i = 0; i < resourceList.size(); i++) {
             resource += "/" + resourceList.get(i);
         }
-        
-        //System.out.println("Resource:" + resource);
+
+        // System.out.println("Resource:" + resource);
         Node whereNode = resourcePolicyMap.get(resource);
-        
+
         boolean result = Evaluator.evaluate(key, user, whereNode, server);
         threadIdInvocationCount.remove(threadId);
-        
+
         if (result) {
             return EnumSet.of(Permission.READ);
         }
@@ -78,8 +87,8 @@ public class KVACAuthority implements IAuthority {
         return resourcePolicyMap;
     }
 
-    public void readPolicyFile() throws Exception {
-        resourcePolicyMap = new LinkedHashMap<String, Node>();
+    public Map<String,Node> readPolicyFile() {
+        Map<String,Node>resourcePolicyMap = new LinkedHashMap<String, Node>();
         String accessFilename = System.getProperty(ACCESS_FILENAME_PROPERTY);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         try {
@@ -117,5 +126,6 @@ public class KVACAuthority implements IAuthority {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+        return resourcePolicyMap;
     }
 }
